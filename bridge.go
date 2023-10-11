@@ -9,12 +9,12 @@ import (
 
 func main() {
 
-	ifi, err := net.InterfaceByName("lo0") //this name depends on your machine!
+	ifi, err := net.InterfaceByName("lo") //this name depends on your machine!
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	recv, err := sacn.NewReceiverSocket("127.0.0.1:5570", ifi)
+	recv, err := sacn.NewReceiverSocket("127.0.0.1:5568", ifi)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -57,6 +57,7 @@ func main() {
 			uint8(255), uint8(0), ar[42], ar[43], ar[44], uint8(0), uint8(0),
 			uint8(255), uint8(0), ar[45], ar[46], ar[47], uint8(0), uint8(0),
 
+			uint8(0), uint8(0),
 			//Par1
 			uint8(255), ar[48], ar[49], ar[50], uint8(0), uint8(0), uint8(0),
 			//Par2

@@ -47,6 +47,8 @@ func main() {
 			uint8(255), uint8(0), ar[15], ar[16], ar[17], uint8(0), uint8(0),
 			uint8(255), uint8(0), ar[18], ar[19], ar[20], uint8(0), uint8(0),
 			uint8(255), uint8(0), ar[21], ar[22], ar[23], uint8(0), uint8(0),
+
+			uint8(0), uint8(0),
 			//LedBar2
 			uint8(255), uint8(0), ar[24], ar[25], ar[26], uint8(0), uint8(0),
 			uint8(255), uint8(0), ar[27], ar[28], ar[29], uint8(0), uint8(0),

@@ -1,19 +1,20 @@
 package main
 
 import (
+	"dmxBridge/sacn"
 	"fmt"
-	"github.com/lucasgalton/go-sacn2/sacn"
 	"log"
 	"net"
 )
 
 func main() {
 
-	ifi, err := net.InterfaceByName("lo") //this name depends on your machine!
+	ifi, err := net.InterfaceByName("lo0") //this name depends on your machine!
 	if err != nil {
 		log.Fatal(err)
 	}
-	recv, err := sacn.NewReceiverSocket("", ifi)
+
+	recv, err := sacn.NewReceiverSocket("127.0.0.1:5570", ifi)
 	if err != nil {
 		log.Fatal(err)
 	}
